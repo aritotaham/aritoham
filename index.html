@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aritoham Protocol — Mint · Burn · Grow | Zero Supply. Smart Minting. AI-Powered Finance.</title>
+  <meta name="description" content="Aritoham Protocol is a Web3 finance ecosystem built on zero supply, smart minting, controlled burning and AI-powered financial intelligence." />
+  <link rel="icon" type="image/png" href="assets/logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <div class="bg-glow"></div>
+  <div class="bg-grid"></div>
+
+  <!-- ================= HEADER ================= -->
+  <header id="header">
+    <div class="container nav">
+      <a href="#home" class="brand">
+        <img src="assets/logo.png" alt="Aritoham Protocol logo" />
+        <span>ARITOHAM <em>PROTOCOL</em></span>
+      </a>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#protocol" class="nav-a">Protocol</a></li>
+        <li><a href="#tokenomics" class="nav-a">Tokenomics</a></li>
+        <li><a href="#mechanism" class="nav-a">Mechanism</a></li>
+        <li><a href="#ecosystem" class="nav-a">Ecosystem</a></li>
+        <li><a href="#roadmap" class="nav-a">Roadmap</a></li>
+        <li><a href="whitepaper.html" target="_blank" class="nav-a">WhitePaper</a></li>
+        <li><a href="#faq" class="nav-a">Governance</a></li>
+      </ul>
+
+      <div class="nav-right">
+        <span class="lang">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.7 3.8 9S14.5 18.4 12 21c-2.5-2.6-3.8-5.7-3.8-9S9.5 5.6 12 3z"/></svg>
+          EN
+        </span>
+        <a href="#mint" class="btn btn-gold btn-sm">Open App</a>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= HERO ================= -->
+  <section class="hero" id="home">
+    <canvas id="particles"></canvas>
+    <div class="container">
+      <div>
+        <div class="hero-badge reveal"><span class="dot"></span> ARITOHAM PROTOCOL</div>
+        <h1 class="reveal">Engineered for trust.<br /><span class="gold">Decentralized future.</span></h1>
+        <div class="tagline reveal">Mint · Burn · Grow</div>
+        <div class="hero-pill reveal">
+          <span><b>Zero</b> supply</span><span><b>Smart</b> minting</span><span><b>Controlled</b> burning</span><span><b>AI-powered</b></span>
+        </div>
+        <p class="lead reveal">
+          Aritoham Protocol is a Web3 finance ecosystem built on zero supply, smart minting,
+          controlled burning and AI-powered financial intelligence — where every mint, every
+          burn and every reward is governed entirely by immutable smart-contract logic.
+        </p>
+        <div class="hero-btns reveal">
+          <a href="#mint" class="btn btn-gold">Connect now</a>
+          <a href="#faq" class="btn btn-ghost">Read the docs &rarr;</a>
+        </div>
+        <div class="hero-stats reveal">
+          <div class="stat"><div class="num" data-count="0">0</div><div class="lbl">Initial Supply</div></div>
+          <div class="stat"><div class="num"><span data-count="80">0</span>%</div><div class="lbl">Minted to Staker</div></div>
+          <div class="stat"><div class="num"><span data-count="20">0</span>%</div><div class="lbl">Liquidity Support</div></div>
+          <div class="stat"><div class="num"><span data-count="100">0</span>%</div><div class="lbl">Sell Burned</div></div>
+        </div>
+      </div>
+
+      <div class="hero-visual reveal">
+        <div class="coin-wrap">
+          <div class="coin-ring"></div>
+          <div class="coin-ring r2"></div>
+          <div class="coin-ring r3"></div>
+          <div class="coin-orbit"><i></i></div>
+          <div class="coin"><img src="assets/logo.png" alt="Aritoham coin" /></div>
+          <div class="coin-chip">ARITOHAM PROTOCOL</div>
+        </div>
+      </div>
+    </div>
+    <div class="scroll-hint">&darr;</div>
+  </section>
+
+  <!-- ================= MARQUEE ================= -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span>Decentralized</span><span>Transparent</span><span>User-Controlled</span><span>Trustless</span>
+      <span>Mint · Burn · Grow</span><span>AI-Powered Intelligence</span>
+      <span>Decentralized</span><span>Transparent</span><span>User-Controlled</span><span>Trustless</span>
+      <span>Mint · Burn · Grow</span><span>AI-Powered Intelligence</span>
+    </div>
+  </div>
+
+  <!-- ================= ENGINEERED FOR TRUST ================= -->
+  <section id="protocol">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Protocol Infrastructure</span>
+        <h2>Engineered for <span class="gold">trust.</span></h2>
+        <p>Six layers of automated, on-chain protection working around the clock — no admin, no manual intervention, no hidden switches.</p>
+      </div>
+
+      <div class="trust-grid">
+        <div class="t-card reveal">
+          <h3>Smart contract automation</h3>
+          <p>All token logic — minting, burning and payouts — runs fully automated on-chain.</p>
+          <div class="chart">
+            <svg viewBox="0 0 200 90" preserveAspectRatio="none">
+              <path d="M10 70 L45 70 L45 40 L80 40 L80 58 L115 58 L115 22 L150 22 L150 44 L190 44" fill="none" stroke="#c9a45c" stroke-width="2.5" stroke-linejoin="round"/>
+              <circle cx="45" cy="70" r="4" fill="#e3c47f"/><circle cx="80" cy="40" r="4" fill="#e3c47f"/><circle cx="115" cy="58" r="4" fill="#e3c47f"/><circle cx="150" cy="22" r="4" fill="#e3c47f"/>
+            </svg>
+          </div>
+        </div>
+
+        <div class="t-card reveal" style="transition-delay:.07s">
+          <h3>Liquidity integration</h3>
+          <p>20% of every mint routes into liquidity to reinforce market stability and price.</p>
+          <div class="split-bar"><i class="b1"></i><i class="b2"></i></div>
+          <div class="split-lbl"><span>Staker</span><span><b>80%</b> / 20% Liquidity</span></div>
+        </div>
+
+        <div class="t-card reveal" style="transition-delay:.14s">
+          <h3>Deflationary burn engine</h3>
+          <p>100% of every sell is burned, permanently shrinking supply with each exit.</p>
+          <div class="chart">
+            <svg viewBox="0 0 200 90" preserveAspectRatio="none">
+              <path d="M10 15 L50 32 L90 44 L130 58 L170 72 L190 80" fill="none" stroke="#c9a45c" stroke-width="2.5"/>
+              <path d="M10 15 L50 32 L90 44 L130 58 L170 72 L190 80 L190 90 L10 90 Z" fill="rgba(201,164,92,.14)"/>
+              <text x="160" y="26" fill="#e3c47f" font-size="11" font-family="Space Grotesk">-100%</text>
+            </svg>
+          </div>
+        </div>
+
+        <div class="t-card reveal">
+          <h3>Price support mechanism</h3>
+          <p>Mint and liquidity flows are designed to move price in one direction — up.</p>
+          <div class="chart">
+            <svg viewBox="0 0 200 90" preserveAspectRatio="none">
+              <path d="M10 78 L45 66 L70 72 L105 48 L135 54 L165 26 L190 14" fill="none" stroke="#c9a45c" stroke-width="2.5" stroke-linejoin="round"/>
+              <path d="M165 14 L190 14 L190 30 Z" fill="#e3c47f"/>
+            </svg>
+          </div>
+        </div>
+
+        <div class="t-card reveal" style="transition-delay:.07s">
+          <h3>Ownership renounced</h3>
+          <p>No admin can mint, pause or change the contract after deployment.</p>
+          <div class="chart">
+            <svg viewBox="0 0 200 90">
+              <path d="M100 12 L156 30 V52 C156 70 128 80 100 84 C72 80 44 70 44 52 V30 Z" fill="rgba(201,164,92,.12)" stroke="#c9a45c" stroke-width="2"/>
+              <path d="M78 46 L94 62 L126 32" fill="none" stroke="#e3c47f" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+        </div>
+
+        <div class="t-card reveal" style="transition-delay:.14s">
+          <h3>Anti-whale protection</h3>
+          <p>Capped per-wallet deposits ($1000) prevent supply shocks and exploits.</p>
+          <div class="chart">
+            <svg viewBox="0 0 200 90">
+              <rect x="18"  y="20" width="26" height="60" rx="3" fill="#c9a45c"/>
+              <rect x="62"  y="34" width="26" height="46" rx="3" fill="#8f743d"/>
+              <rect x="106" y="48" width="26" height="32" rx="3" fill="#5f6b73"/>
+              <rect x="150" y="62" width="26" height="18" rx="3" fill="#3c434a"/>
+              <line x1="10" y1="16" x2="190" y2="16" stroke="#e3c47f" stroke-width="1.5" stroke-dasharray="5 4"/>
+              <text x="150" y="11" fill="#e3c47f" font-size="10" font-family="Space Grotesk">$1000 cap</text>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= THREE FORCES ================= -->
+  <section class="band-2" id="forces">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Elastic Supply</span>
+        <h2>Three forces, one <span class="gold">elastic supply.</span></h2>
+        <p>The protocol expands and contracts supply to defend the peg — and routes everything left over back to holders.</p>
+      </div>
+
+      <div class="forces">
+        <div class="force-card reveal">
+          <div class="f-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M12 8v8M9 11l3-3 3 3M9 13l3 3 3-3"/></svg></div>
+          <h3>MINT</h3>
+          <p>Deposit approved collateral and mint Aritoham against it. New supply enters circulation only when it is fully backed.</p>
+          <div class="f-chart">
+            <svg viewBox="0 0 260 74" preserveAspectRatio="none">
+              <rect x="12"  y="46" width="34" height="22" rx="3" fill="#8f743d"/>
+              <rect x="66"  y="38" width="34" height="30" rx="3" fill="#c9a45c"/>
+              <rect x="120" y="28" width="34" height="40" rx="3" fill="#c9a45c"/>
+              <rect x="174" y="16" width="34" height="52" rx="3" fill="#e3c47f"/>
+              <path d="M220 60 L246 22" stroke="#e3c47f" stroke-width="2.5"/><path d="M246 22 l-8 3 M246 22 l-2 9" stroke="#e3c47f" stroke-width="2.5"/>
+            </svg>
+          </div>
+        </div>
+
+        <div class="force-card reveal" style="transition-delay:.1s">
+          <div class="f-ico"><svg viewBox="0 0 24 24"><path d="M12 3c1 3-2 4-2 7a4 4 0 008 0c0-1-.5-2-1-3 2 1 4 3.5 4 6.5A7 7 0 016 16.5C6 10 12 8.5 12 3z"/></svg></div>
+          <h3>BURN</h3>
+          <p>Redeem or burn Aritoham to retire supply and reclaim collateral. Every burn is irreversible and on-chain.</p>
+          <div class="f-chart">
+            <svg viewBox="0 0 260 74" preserveAspectRatio="none">
+              <path d="M12 14 L60 24 L108 32 L156 44 L204 56 L248 64" fill="none" stroke="#c9a45c" stroke-width="2.5"/>
+              <path d="M12 14 L60 24 L108 32 L156 44 L204 56 L248 64 L248 74 L12 74 Z" fill="rgba(201,164,92,.12)"/>
+            </svg>
+          </div>
+        </div>
+
+        <div class="force-card reveal" style="transition-delay:.2s">
+          <div class="f-ico"><svg viewBox="0 0 24 24"><path d="M4 19 L10 12 L14 15 L20 6"/><path d="M15 6h5v5"/></svg></div>
+          <h3>GROW</h3>
+          <p>Mint Aritoham to earn protocol yield from treasury strategies and fees. The reserve compounds in your favor.</p>
+          <div class="f-chart">
+            <svg viewBox="0 0 260 74" preserveAspectRatio="none">
+              <path d="M12 64 L52 56 L92 60 L132 42 L172 46 L212 22 L248 10" fill="none" stroke="#c9a45c" stroke-width="2.5" stroke-linejoin="round"/>
+              <path d="M212 22 L248 10 L242 26 Z" fill="#e3c47f"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SIX WAYS TO EARN ================= -->
+  <section id="income">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Income Architecture</span>
+        <h2>Six ways to earn your <span class="gold">income.</span></h2>
+        <p>Stacked income streams — capital, network, leadership and ecosystem, plus one-time leadership rewards.</p>
+      </div>
+
+      <div class="income-grid">
+        <div class="inc-card reveal">
+          <span class="idx">01</span>
+          <div class="pct">1.25%</div>
+          <h3>Emission Rewards</h3>
+          <p>Daily ROI on full deposit capital. Capped at 2X.</p>
+        </div>
+        <div class="inc-card reveal" style="transition-delay:.06s">
+          <span class="idx">02</span>
+          <div class="pct">5%</div>
+          <h3>Direct Income</h3>
+          <p>Earn instantly when your direct member stakes. Minimum $50.</p>
+        </div>
+        <div class="inc-card reveal" style="transition-delay:.12s">
+          <span class="idx">03</span>
+          <div class="pct">30%</div>
+          <h3>Generation Income</h3>
+          <p>Community reward across team daily income. 20 levels deep.</p>
+        </div>
+        <div class="inc-card reveal">
+          <span class="idx">04</span>
+          <div class="pct">35%</div>
+          <h3>Rank Incentive</h3>
+          <p>Leadership reward through the rank system — unlimited depth.</p>
+        </div>
+        <div class="inc-card reveal" style="transition-delay:.06s">
+          <span class="idx">05</span>
+          <div class="pct">$125K</div>
+          <h3>Rank Reward</h3>
+          <p>One-time rank reward up to $125,000 at Emperor Rank.</p>
+        </div>
+        <div class="inc-card reveal" style="transition-delay:.12s">
+          <span class="idx">06</span>
+          <div class="pct">5%</div>
+          <h3>DAO Partner Program</h3>
+          <p>Global turnover of the platform distributed among eligible partners weekly.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= VERIFIABLE ================= -->
+  <section class="band-3" id="verify">
+    <div class="container">
+      <div class="verify reveal">
+        <div class="v-visual">
+          <img src="assets/logo.png" alt="Aritoham Protocol emblem" />
+        </div>
+        <div class="v-copy">
+          <span class="eyebrow">On-Chain Transparency</span>
+          <h2>Verifiable to the <span class="gold">last unit.</span></h2>
+          <p>
+            Contracts are immutable, reserves are on-chain, and every mint and burn is auditable
+            in real time. Reviewed by two independent firms with a live coverage backstop.
+          </p>
+          <div class="hero-btns" style="margin-bottom:0">
+            <a href="#mint" class="btn btn-gold">Mint Aritoham</a>
+            <a href="#faq" class="btn btn-ghost">Read the docs &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= MECHANISM ================= -->
+  <section id="mechanism">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Unique Mechanism</span>
+        <h2>Token minting &amp; burning <span class="gold">mechanism.</span></h2>
+        <p>Every deposit drives mint and liquidity. Every sell drives burn and stability. Price moves only one way.</p>
+      </div>
+
+      <div class="mech-grid">
+        <div class="mech-panel reveal">
+          <span class="m-tag">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#e3c47f" stroke-width="2.4" stroke-linecap="round"><path d="M12 4v12M6 10l6 6 6-6"/></svg>
+            On Mint
+          </span>
+          <h3>User minting</h3>
+          <div class="mech-flex">
+            <div class="ring-wrap">
+              <svg viewBox="0 0 120 120">
+                <circle cx="60" cy="60" r="52" fill="none" stroke="#2b3238" stroke-width="12"/>
+                <circle cx="60" cy="60" r="52" fill="none" stroke="#c9a45c" stroke-width="12" stroke-dasharray="261 326" stroke-linecap="round"/>
+                <circle cx="60" cy="60" r="52" fill="none" stroke="#5f6b73" stroke-width="12" stroke-dasharray="65 326" stroke-dashoffset="-261" stroke-linecap="round" transform="rotate(0)"/>
+              </svg>
+              <div class="ring-center">
+                <div class="rc-img"><img src="assets/logo.png" alt="Aritoham" /></div>
+                <b>80 / 20</b>
+                <span>MINT SPLIT</span>
+              </div>
+            </div>
+            <ul class="mech-list">
+              <li><span class="dot"></span> Token minting <span class="val">80%</span></li>
+              <li><span class="dot"></span> Liquidity / price support <span class="val">20%</span></li>
+            </ul>
+          </div>
+          <p class="mech-note">80% of every mint is credited to the staker. <b>20% routes automatically into liquidity</b> to reinforce the price floor.</p>
+        </div>
+
+        <div class="mech-panel reveal" style="transition-delay:.1s">
+          <span class="m-tag">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#e3c47f" stroke-width="2.4" stroke-linecap="round"><path d="M12 4c1 3-2 4-2 7a4 4 0 008 0c0-1-.5-2-1-3 2 1 4 3.5 4 6.5A7 7 0 016 16.5C6 10 12 8.5 12 4z"/></svg>
+            On Sell
+          </span>
+          <h3>Built for long-term growth</h3>
+          <div class="mech-flex">
+            <div class="ring-wrap">
+              <svg viewBox="0 0 120 120">
+                <circle cx="60" cy="60" r="52" fill="none" stroke="#2b3238" stroke-width="12"/>
+                <circle cx="60" cy="60" r="52" fill="none" stroke="#c9a45c" stroke-width="12" stroke-dasharray="326 326" stroke-linecap="round"/>
+              </svg>
+              <div class="ring-center">
+                <div class="rc-img"><img src="assets/logo.png" alt="Aritoham" /></div>
+                <b>100%</b>
+                <span>BURNED</span>
+              </div>
+            </div>
+            <ul class="mech-list">
+              <li><span class="dot"></span> User sell <span class="val">trigger</span></li>
+              <li><span class="dot"></span> Tokens burned <span class="val">100%</span></li>
+              <li><span class="dot"></span> Long-term stability <span class="val">deflationary</span></li>
+              <li><span class="dot"></span> Price impact <span class="val">upward support</span></li>
+            </ul>
+          </div>
+          <p class="mech-note">Powering a deflationary future. <b>Every sell permanently removes supply</b> — shrinking supply, reinforcing price.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= TOKENOMICS ================= -->
+  <section class="band-2" id="tokenomics">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Tokenomics</span>
+        <h2>Tokenomics — <span class="gold">architecture of trust</span></h2>
+        <p>A fixed, transparent allocation model. No pre-mine, no hidden supply — every token is accounted for on-chain.</p>
+      </div>
+
+      <div class="toko-wrap">
+        <div class="toko-center reveal">
+          <div class="toko-donut">
+            <svg viewBox="0 0 200 200">
+              <circle cx="100" cy="100" r="84" fill="none" stroke="#2b3238" stroke-width="2"/>
+              <circle cx="100" cy="100" r="72" fill="none" stroke="#23282d" stroke-width="20"/>
+              <circle cx="100" cy="100" r="72" fill="none" stroke="#c9a45c" stroke-width="20" stroke-dasharray="361 452" stroke-linecap="round"/>
+              <circle cx="100" cy="100" r="72" fill="none" stroke="#5f6b73" stroke-width="20" stroke-dasharray="90 452" stroke-dashoffset="-362" stroke-linecap="round"/>
+            </svg>
+            <div class="td-center">
+              <img src="assets/logo.png" alt="Aritoham" />
+              <b>SMART CONTRACT</b>
+              <span>0 initial supply</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="toko-cards">
+          <div class="toko-spacer"></div>
+          <div class="toko-row">
+            <div class="toko-card reveal"><div class="tc-top"><span class="tc-num">80%</span><h4>Smart Minting</h4></div><p>80% of every minting transaction is minted to the staker.</p></div>
+            <div class="toko-card reveal" style="transition-delay:.06s"><div class="tc-top"><span class="tc-num">0</span><h4>Zero Supply Model</h4></div><p>Tokens are not pre-created. Supply begins at zero and expands only through on-chain participation.</p></div>
+          </div>
+          <div class="toko-row">
+            <div class="toko-card reveal" style="transition-delay:.12s"><div class="tc-top"><span class="tc-num">20%</span><h4>Liquidity Support</h4></div><p>20% routes automatically into liquidity to support price.</p></div>
+            <div class="toko-card reveal" style="transition-delay:.18s"><div class="tc-top"><span class="tc-num">100%</span><h4>Ownership Renounced</h4></div><p>No admin keys, no pause, no upgrade — no rug-pull style hidden control over the contract.</p></div>
+          </div>
+          <div class="toko-row">
+            <div class="toko-card reveal" style="transition-delay:.24s"><div class="tc-top"><span class="tc-num">100%</span><h4>Deflationary Burn</h4></div><p>Every sell burns 100% of tokens, shrinking supply and reinforcing price.</p></div>
+            <div class="toko-card reveal" style="transition-delay:.3s"><div class="tc-top"><span class="tc-num">$1K</span><h4>Anti-Whale Protection</h4></div><p>Capped per-wallet deposits ($1000) prevent supply shocks and price exploits.</p></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="toko-panels">
+        <div class="panel reveal">
+          <div class="p-sub">Per minting transaction</div>
+          <h3>The 80 / 20 split</h3>
+          <div class="big-split">80 / 20 <span style="font-size:1rem;color:var(--muted);font-weight:500">split</span></div>
+          <div class="row-bar">
+            <span class="lbl">Minted to staker</span>
+            <span class="track"><i style="width:80%;background:linear-gradient(90deg,var(--gold),var(--gold-2))"></i></span>
+            <span class="v">80%</span>
+          </div>
+          <div class="row-bar">
+            <span class="lbl">Liquidity &amp; price support</span>
+            <span class="track"><i style="width:20%;background:#5f6b73"></i></span>
+            <span class="v">20%</span>
+          </div>
+          <p class="fine">80% of every minting transaction is minted to the staker. 20% routes automatically into liquidity to support price.</p>
+        </div>
+
+        <div class="panel reveal" style="transition-delay:.1s">
+          <div class="p-sub">Trust model</div>
+          <h3>Checks you can verify</h3>
+          <ul class="check-list" style="margin-top:18px">
+            <li><span class="ck"><svg viewBox="0 0 24 24"><path d="M5 13l4 4 10-11"/></svg></span><div><b>Zero supply model</b><span>Supply begins at zero — no pre-mine, no insider allocation.</span></div></li>
+            <li><span class="ck"><svg viewBox="0 0 24 24"><path d="M5 13l4 4 10-11"/></svg></span><div><b>Ownership renounced</b><span>No admin keys or hidden control over the contract.</span></div></li>
+            <li><span class="ck"><svg viewBox="0 0 24 24"><path d="M5 13l4 4 10-11"/></svg></span><div><b>Anti-whale protection</b><span>Capped per-wallet deposits prevent supply shocks.</span></div></li>
+            <li><span class="ck"><svg viewBox="0 0 24 24"><path d="M5 13l4 4 10-11"/></svg></span><div><b>Deflationary burn</b><span>Every sell burns 100% of tokens, permanently.</span></div></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= ECOSYSTEM / PRODUCTS ================= -->
+  <section id="ecosystem">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Product Ecosystem</span>
+        <h2>Three products. One <span class="gold">connected vision.</span></h2>
+        <p>A wallet that understands your portfolio, a community that trades together, and an AI copilot that guides every move.</p>
+      </div>
+
+      <!-- Product 1: AI Wallet -->
+      <div class="prod reveal">
+        <div class="p-copy">
+          <span class="p-kicker"><svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="14" rx="3"/><path d="M3 10h18M16 15h2"/></svg> AI Wallet</span>
+          <h3>Aritoham <span class="gold">AI Wallet</span></h3>
+          <p>
+            Know Your Portfolio — a portfolio intelligence wallet that helps you understand your
+            assets with clarity. Balances, health scores and daily insights in one secure place.
+          </p>
+        </div>
+        <div class="p-visual">
+          <div class="mock-wallet">
+            <div class="mw-top">
+              <img src="assets/logo.png" alt="Aritoham" />
+              <div><b>Aritoham AI Wallet</b><span>PORTFOLIO INTELLIGENCE</span></div>
+            </div>
+            <div class="mw-val">$286,458.88</div>
+            <div class="mw-sub">&#9650; +12.4% this month &middot; AI health score: 94/100</div>
+            <div class="mw-coins">
+              <div class="mw-coin"><img src="assets/logo.png" alt="ART" /><b>ART</b><span>68%</span></div>
+              <div class="mw-coin"><img src="assets/logo.png" alt="Staked" /><b>Staked</b><span>22%</span></div>
+              <div class="mw-coin"><img src="assets/logo.png" alt="Rewards" /><b>Rewards</b><span>10%</span></div>
+            </div>
+            <div class="mw-chart">
+              <svg viewBox="0 0 300 64" preserveAspectRatio="none">
+                <path d="M0 52 L40 44 L80 48 L120 34 L160 38 L200 24 L240 28 L300 10 L300 64 L0 64 Z" fill="rgba(201,164,92,.13)"/>
+                <path d="M0 52 L40 44 L80 48 L120 34 L160 38 L200 24 L240 28 L300 10" fill="none" stroke="#c9a45c" stroke-width="2"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 2: Circle (Social Trading Platform) -->
+      <div class="prod reveal">
+        <div class="p-copy">
+          <span class="p-kicker"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><circle cx="17" cy="10" r="2.5"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6M14.5 15.5c2.6.4 4.5 2 4.5 4.5"/></svg> Social Trading</span>
+          <h3>Aritoham <span class="gold">Circle</span></h3>
+          <p>
+            Trade Together, Grow Together — a social trading network where you follow top traders,
+            copy winning strategies in one tap, and share alpha in token-gated communities.
+          </p>
+        </div>
+        <div class="p-visual">
+          <div class="mock-wallet" style="padding:22px 24px;">
+            <div class="mw-top">
+              <img src="assets/logo.png" alt="Aritoham" />
+              <div><b>Aritoham Circle</b><span>SOCIAL TRADING</span></div>
+            </div>
+            <div style="margin:16px 0 6px;font-size:12px;letter-spacing:.14em;color:rgba(255,255,255,.55);text-transform:uppercase;">Top Traders This Week</div>
+            <div style="display:flex;flex-direction:column;gap:10px;margin-top:8px;">
+              <div style="display:flex;align-items:center;justify-content:space-between;background:rgba(201,164,92,.08);border:1px solid rgba(201,164,92,.18);border-radius:12px;padding:10px 14px;">
+                <div style="display:flex;align-items:center;gap:10px;">
+                  <img src="assets/logo.png" alt="Trader" style="width:30px;height:30px;border-radius:50%;" />
+                  <div><b style="font-size:14px;">@CryptoKing</b><div style="font-size:11px;color:rgba(255,255,255,.5);">2,140 followers</div></div>
+                </div>
+                <div style="display:flex;align-items:center;gap:10px;">
+                  <b style="color:#7ee08a;font-size:14px;">+34.2%</b>
+                  <span style="background:#c9a45c;color:#0b0d12;font-size:11px;font-weight:700;border-radius:8px;padding:5px 12px;cursor:pointer;">Copy</span>
+                </div>
+              </div>
+              <div style="display:flex;align-items:center;justify-content:space-between;background:rgba(201,164,92,.08);border:1px solid rgba(201,164,92,.18);border-radius:12px;padding:10px 14px;">
+                <div style="display:flex;align-items:center;gap:10px;">
+                  <img src="assets/logo.png" alt="Trader" style="width:30px;height:30px;border-radius:50%;" />
+                  <div><b style="font-size:14px;">@AlphaWolf</b><div style="font-size:11px;color:rgba(255,255,255,.5);">1,872 followers</div></div>
+                </div>
+                <div style="display:flex;align-items:center;gap:10px;">
+                  <b style="color:#7ee08a;font-size:14px;">+21.7%</b>
+                  <span style="background:#c9a45c;color:#0b0d12;font-size:11px;font-weight:700;border-radius:8px;padding:5px 12px;cursor:pointer;">Copy</span>
+                </div>
+              </div>
+              <div style="display:flex;align-items:center;justify-content:space-between;background:rgba(201,164,92,.08);border:1px solid rgba(201,164,92,.18);border-radius:12px;padding:10px 14px;">
+                <div style="display:flex;align-items:center;gap:10px;">
+                  <img src="assets/logo.png" alt="Trader" style="width:30px;height:30px;border-radius:50%;" />
+                  <div><b style="font-size:14px;">@MoonHunter</b><div style="font-size:11px;color:rgba(255,255,255,.5);">1,405 followers</div></div>
+                </div>
+                <div style="display:flex;align-items:center;gap:10px;">
+                  <b style="color:#7ee08a;font-size:14px;">+18.9%</b>
+                  <span style="background:#c9a45c;color:#0b0d12;font-size:11px;font-weight:700;border-radius:8px;padding:5px 12px;cursor:pointer;">Copy</span>
+                </div>
+              </div>
+            </div>
+            <div class="mw-sub" style="margin-top:14px;">Your Circle: 1,240 members &middot; 12 active signals</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 3: Pulse AI (AI Trading Copilot) -->
+      <div class="prod reveal">
+        <div class="p-copy">
+          <span class="p-kicker"><svg viewBox="0 0 24 24"><path d="M3 12h4l3-7 4 14 3-7h4"/></svg> AI Copilot</span>
+          <h3>Aritoham <span class="gold">Pulse AI</span></h3>
+          <p>
+            Your Personal Trading Copilot — an AI engine that reads the market in real time, sends
+            smart entry and exit signals, and automates your strategies while you sleep.
+          </p>
+        </div>
+        <div class="p-visual">
+          <div class="mock-ai">
+            <div class="ma-head">
+              <b>PULSE AI ENGINE</b>
+              <span class="ma-live"><i></i>LIVE</span>
+            </div>
+            <div class="ma-globe">
+              <div class="g-ring"></div>
+              <img src="assets/logo.png" alt="Aritoham Pulse AI" />
+            </div>
+            <div class="ma-rows">
+              <div class="ma-row"><span>Smart signals</span><b class="up">+12 today</b></div>
+              <div class="ma-row"><span>Auto-trades executed</span><b>27</b></div>
+              <div class="ma-row"><span>Copilot accuracy</span><b class="up">91.4%</b></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+  <!-- ================= ROADMAP ================= -->
+  <section class="band-2" id="roadmap">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Roadmap</span>
+        <h2>42 Months. Five Phases. One <span class="gold">AI-Powered Web3 Ecosystem.</span></h2>
+        <p>A disciplined, phase-by-phase build from community foundation to full global infrastructure.</p>
+      </div>
+
+      <div class="rm-grid">
+        <div class="rm-card reveal">
+          <span class="rm-status progress">In progress</span>
+          <span class="rm-phase">Phase 01</span>
+          <h3>Community Foundation</h3>
+          <ul>
+            <li>Aritoham brand launch</li>
+            <li>Community growth &amp; onboarding</li>
+            <li>Strategic partnerships</li>
+          </ul>
+        </div>
+        <div class="rm-card reveal" style="transition-delay:.07s">
+          <span class="rm-status next">Upcoming</span>
+          <span class="rm-phase">Phase 02</span>
+          <h3>Aritoham AI Wallet Launch</h3>
+          <ul>
+            <li>Portfolio intelligence wallet</li>
+            <li>AI wallet health scoring</li>
+            <li>Daily market insights</li>
+          </ul>
+        </div>
+        <div class="rm-card reveal" style="transition-delay:.14s">
+          <span class="rm-status next">Upcoming</span>
+          <span class="rm-phase">Phase 03</span>
+          <h3>Aritoham Circle</h3>
+          <ul>
+            <li>Trade Together, Grow Together</li>
+            <li>Token-gated community groups</li>
+            <li>Portfolio balance, usage &amp; payment tracking</li>
+          </ul>
+        </div>
+        <div class="rm-card reveal" style="transition-delay:.21s">
+          <span class="rm-status next">Upcoming</span>
+          <span class="rm-phase">Phase 04</span>
+          <h3>Aritoham Pulse AI</h3>
+          <ul>
+            <li>Market intelligence engine</li>
+            <li>Trend &amp; opportunity discovery</li>
+            <li>AI research reports</li>
+          </ul>
+        </div>
+        <div class="rm-card reveal" style="transition-delay:.28s">
+          <span class="rm-status next">Upcoming</span>
+          <span class="rm-phase">Phase 05</span>
+          <h3>Global Expansion &amp; Web3 Infrastructure</h3>
+          <ul>
+            <li>Global ecosystem growth</li>
+            <li>Developer APIs &amp; integrations</li>
+            <li>Governance framework</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FAQ ================= -->
+  <section id="faq">
+    <div class="container">
+      <h2 class="faq-title reveal">QUESTIONS &amp; <span class="gold">ANSWERS</span></h2>
+
+      <div class="faq">
+        <div class="faq-item reveal">
+          <button class="faq-q"><span class="no">01</span> What is Aritoham Protocol?
+            <span class="chev">+</span></button>
+          <div class="faq-a"><p>A Web3 finance ecosystem where token creation, supply reduction, price support and utility growth are governed entirely by smart-contract logic — zero initial supply, smart minting, controlled burning and AI-powered intelligence.</p></div>
+        </div>
+        <div class="faq-item reveal">
+          <button class="faq-q"><span class="no">02</span> What is the zero-supply model?
+            <span class="chev">+</span></button>
+          <div class="faq-a"><p>Tokens are not pre-created. Supply begins at zero and expands only through on-chain participation — every mint is transparent, fully backed and verifiable in real time.</p></div>
+        </div>
+        <div class="faq-item reveal">
+          <button class="faq-q"><span class="no">03</span> How does burning work?
+            <span class="chev">+</span></button>
+          <div class="faq-a"><p>Every sell burns 100% of the tokens sold — permanently and irreversibly. Over time, controlled burning shrinks supply, creates scarcity and reinforces price from the inside.</p></div>
+        </div>
+        <div class="faq-item reveal">
+          <button class="faq-q"><span class="no">04</span> Is it safe? Who controls it?
+            <span class="chev">+</span></button>
+          <div class="faq-a"><p>Ownership is renounced — no admin can mint, pause or change the contract after deployment. Combined with anti-whale deposit caps, immutable code and independent audits, the protocol runs exactly as written.</p></div>
+        </div>
+        <div class="faq-item reveal">
+          <button class="faq-q"><span class="no">05</span> How do I earn?
+            <span class="chev">+</span></button>
+          <div class="faq-a"><p>Six stacked income streams: 1.25% daily emission rewards, 5% direct income, 30% generation income across 20 levels, 35% rank incentives, one-time rank rewards up to $125K, and the 5% DAO partner program.</p></div>
+        </div>
+        <div class="faq-item reveal">
+          <button class="faq-q"><span class="no">06</span> How do I get started?
+            <span class="chev">+</span></button>
+          <div class="faq-a"><p>Connect a wallet, choose a package and mint ARITOHAM in under a minute — 80% to you, 20% to liquidity. Read the docs to understand the mechanism before you stake.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= MINT CTA ================= -->
+  <section class="band-3" id="mint" style="padding-top:0; margin-top: 1rem;">
+    <div class="container">
+      <div class="mint-band reveal">
+        <div class="m-copy">
+          <span class="eyebrow">Mint · Burn · Grow</span>
+          <h2>Mint your first <span class="gold">Aritoham.</span></h2>
+          <p>
+            Connect a wallet, choose a package and mint ARITOHAM in under a minute —
+            80% to you, 20% to liquidity.
+          </p>
+          <div class="hero-btns" style="margin-bottom:0">
+            <a href="#home" class="btn btn-gold">Open App</a>
+            <a href="#faq" class="btn btn-ghost">Read the docs &rarr;</a>
+          </div>
+          <div class="mint-mini">
+            <div><b>~1 min</b><span>Start to first mint</span></div>
+            <div><b>$50</b><span>Minimum stake</span></div>
+            <div><b>$1000</b><span>Anti-whale cap</span></div>
+          </div>
+        </div>
+        <div class="m-visual">
+          <img src="assets/logo.png" alt="Aritoham coin" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer>
+    <div class="container">
+      <div class="foot-cta reveal">
+        <span class="eyebrow">Join the Protocol</span>
+        <h2>Ready to Join? <span class="gold">Start Minting</span></h2>
+        <p>Be part of a decentralized, transparent and user-controlled financial ecosystem — built for the long term, governed by the community.</p>
+        <div class="hero-btns" style="justify-content:center;margin-bottom:0">
+          <a href="#mint" class="btn btn-gold">Open App</a>
+          <a href="#protocol" class="btn btn-ghost">Explore the Protocol</a>
+        </div>
+        <div class="socials">
+          <!-- <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M13.5 21v-7h2.6l.4-3h-3V9.1c0-.9.3-1.5 1.6-1.5H16.6V4.9c-.3 0-1.2-.1-2.3-.1-2.3 0-3.9 1.4-3.9 4V11H7.8v3h2.6v7h3.1z"/></svg></a> -->
+          <!-- <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 8.8A3.2 3.2 0 1 0 12 15.2 3.2 3.2 0 0 0 12 8.8zm0-2.1a5.3 5.3 0 1 1 0 10.6 5.3 5.3 0 0 1 0-10.6zm6.9-.3a1.2 1.2 0 1 1-2.4 0 1.2 1.2 0 0 1 2.4 0zM12 4.2c-2.5 0-2.8 0-3.8.1-2.6.1-3.8 1.3-3.9 3.9C4.2 9.2 4.2 9.5 4.2 12s0 2.8.1 3.8c.1 2.6 1.3 3.8 3.9 3.9.9.1 1.3.1 3.8.1s2.8 0 3.8-.1c2.6-.1 3.8-1.3 3.9-3.9.1-.9.1-1.3.1-3.8s0-2.8-.1-3.8c-.1-2.6-1.3-3.8-3.9-3.9-.9-.1-1.3-.1-3.8-.1z"/></svg></a> -->
+          <!-- <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M21.6 7.2a2.8 2.8 0 0 0-2-2C17.9 4.8 12 4.8 12 4.8s-5.9 0-7.6.4a2.8 2.8 0 0 0-2 2A29 29 0 0 0 2 12a29 29 0 0 0 .4 4.8 2.8 2.8 0 0 0 2 2c1.7.4 7.6.4 7.6.4s5.9 0 7.6-.4a2.8 2.8 0 0 0 2-2A29 29 0 0 0 22 12a29 29 0 0 0-.4-4.8zM10 15.2V8.8l5.2 3.2z"/></svg></a> -->
+          <!-- <a href="#" aria-label="TikTok"><svg viewBox="0 0 24 24"><path d="M16.6 3c.4 2.1 1.8 3.6 4.1 3.8v3c-1.6 0-3-.5-4.1-1.3v6.1a5.9 5.9 0 1 1-5.9-5.9c.3 0 .7 0 1 .1v3.1a2.8 2.8 0 1 0 1.9 2.7V3h3z"/></svg></a> -->
+         
+
+          <a href="https://x.com/aritoham" aria-label="X (Twitter)" target="_blank"><svg viewBox="0 0 24 24"><path d="M17.8 3h3.1l-6.8 7.8L22 21h-6.3l-4.9-6.4L5.2 21H2.1l7.3-8.3L2 3h6.4l4.4 5.9L17.8 3zm-1.1 16.1h1.7L7.6 4.8H5.8l10.9 14.3z"/></svg></a>
+          <a href="https://t.me/aritoham" target="_blank" aria-label="Telegram"><svg viewBox="0 0 24 24"><path d="M21.9 4.3 2.7 11.7c-1.2.5-1.1 1.4-.2 1.7l4.8 1.5 1.9 5.7c.2.6.1.9.8.9.5 0 .7-.2 1-.5l2.4-2.3 4.9 3.6c.9.5 1.6.2 1.8-.9l3.2-15.2c.3-1.3-.5-1.9-1.4-1.9z"/></svg></a>
+        </div>
+      </div>
+
+      <div class="foot-grid">
+        <div>
+          <div class="foot-brand">
+            <img src="assets/logo.png" alt="Aritoham Protocol logo" />
+            <span>ARITOHAM <em>PROTOCOL</em></span>
+          </div>
+          <p class="foot-desc">
+            A Web3 finance ecosystem built on zero supply, smart minting, controlled burning and
+            AI-powered financial intelligence. Designed to merge a legacy of innovation with
+            next-generation blockchain technology, the platform creates a sustainable digital
+            economy driven by transparency, security and community participation. Through
+            intelligent tokenomics, automated financial insights, decentralized governance, and
+            scalable infrastructure, users gain access to a smarter financial ecosystem that
+            rewards long-term growth, empowers digital ownership, and unlocks new opportunities
+            across DeFi, AI, and the evolving Web3 landscape. Every transaction, decision, and
+            innovation is engineered to build a resilient, efficient, and future-ready
+            decentralized economy for global users.
+          </p>
+        </div>
+        <div class="foot-col">
+          <h4>Protocol</h4>
+          <ul>
+            <li><a href="#protocol">Infrastructure</a></li>
+            <li><a href="#tokenomics">Tokenomics</a></li>
+            <li><a href="#mechanism">Mechanism</a></li>
+            <li><a href="#roadmap">Roadmap</a></li>
+          </ul>
+        </div>
+        <div class="foot-col">
+          <h4>Ecosystem</h4>
+          <ul>
+            <li><a href="#ecosystem">Aritoham AI Wallet</a></li>
+            <li><a href="#ecosystem">Aritoham Circle</a></li>
+            <li><a href="#ecosystem">Aritoham Pulse AI</a></li>
+            <li><a href="#income">Income Streams</a></li>
+          </ul>
+        </div>
+        <div class="foot-col">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="#faq">Docs</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="whitepaper.html">Whitepaper</a></li>
+            <li><a href="#">Audit</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <p class="disclaimer">
+        Disclaimer: Cryptocurrency and DeFi participation involves risk. Nothing on this website
+        constitutes financial advice. Reward rates, caps and roadmap phases are subject to change
+        through community governance. Always do your own research.
+      </p>
+
+      <div class="foot-bottom">
+        <span>&copy; <span id="year">2026</span> Aritoham Protocol. All rights reserved.</span>
+        <span>Mint &middot; Burn &middot; Grow — Powered by smart contracts</span>
+      </div>
+    </div>
+  </footer>
+
+  <button id="toTop" aria-label="Back to top">&uarr;</button>
+
+  <div class="launch-toast" id="launchToast" role="status" aria-live="polite" hidden>
+    <button class="lt-close" id="ltClose" aria-label="Close announcement">&times;</button>
+    <div class="lt-badge"><span class="dot"></span> LAUNCH ANNOUNCEMENT</div>
+    <h4 id="ltTitle">Aritoham Protocol launches November 8, 2026</h4>
+    <div class="lt-count" id="ltCount">
+      <div><b id="ltD">00</b><span>Days</span></div>
+      <div><b id="ltH">00</b><span>Hrs</span></div>
+      <div><b id="ltM">00</b><span>Min</span></div>
+      <div><b id="ltS">00</b><span>Sec</span></div>
+    </div>
+    <a href="#mint" class="btn btn-gold btn-sm">Open App</a>
+  </div>
+
+  <script>
+    (function () {
+      // Launch time: Nov 8, 2026, 00:00 UTC. Change the offset to match your timezone.
+      var LAUNCH = new Date("2026-11-08T00:00:00Z").getTime();
+      var toast = document.getElementById("launchToast");
+      if (!toast) return;
+
+      var dismissed = false;
+      try { dismissed = sessionStorage.getItem("ltDismissed") === "1"; } catch (e) {}
+      if (dismissed) return;
+
+      toast.hidden = false;
+      var pad = function (n) { return String(n).padStart(2, "0"); };
+      var el = function (id) { return document.getElementById(id); };
+      var timer;
+
+      function tick() {
+        var diff = LAUNCH - Date.now();
+        if (diff <= 0) {
+          el("ltTitle").textContent = "Aritoham Protocol is now live";
+          el("ltCount").style.display = "none";
+          clearInterval(timer);
+          return;
+        }
+        el("ltD").textContent = pad(Math.floor(diff / 864e5));
+        el("ltH").textContent = pad(Math.floor(diff / 36e5) % 24);
+        el("ltM").textContent = pad(Math.floor(diff / 6e4) % 60);
+        el("ltS").textContent = pad(Math.floor(diff / 1e3) % 60);
+      }
+      tick();
+      timer = setInterval(tick, 1000);
+
+      el("ltClose").addEventListener("click", function () {
+        toast.hidden = true;
+        clearInterval(timer);
+        try { sessionStorage.setItem("ltDismissed", "1"); } catch (e) {}
+      });
+    })();
+  </script>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,1677 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <title>Aritoham Protocol – Official White Paper</title>
+    <meta
+      name="description"
+      content="Official white paper of Aritoham Protocol, a BNB Chain Web3 ecosystem built around minting, burning and staking. Published claims, verification and risks explained."
+    />
+    <meta name="theme-color" content="#000000" />
+    <style>
+      :root {
+        --bg: #050505;
+        --panel: #0e0d0a;
+        --line: #3a3220;
+        --gold: #d4af37;
+        --gold2: #f6e27a;
+        --gold3: #8a6d1c;
+        --tx: #f2f0ea;
+        --mut: #a8a496;
+        --warn: #e8a33d;
+        --ok: #5fbf8a;
+        color-scheme: dark;
+        box-sizing: border-box;
+        padding-top: env(safe-area-inset-top, 0px);
+        padding-bottom: env(safe-area-inset-bottom, 0px);
+      }
+      html {
+        scroll-behavior: smooth;
+        scroll-padding-top: calc(70px + env(safe-area-inset-top, 0px));
+        background: var(--bg);
+      }
+      *,
+      *:before,
+      *:after {
+        box-sizing: inherit;
+      }
+      body {
+        margin: 0;
+        background: radial-gradient(
+            1200px 500px at 50% -100px,
+            #2a2208,
+            transparent
+          ),
+          var(--bg);
+        color: var(--tx);
+        font: 16px/1.7 "Segoe UI", system-ui, -apple-system, Roboto, Arial,
+          sans-serif;
+      }
+      body::before {
+        content: "";
+        position: fixed;
+        inset: 0 0 auto;
+        height: env(safe-area-inset-top, 0px);
+        background: #000;
+        z-index: 60;
+      }
+      h1,
+      h2,
+      h3 {
+        font-family: Georgia, "Times New Roman", serif;
+        line-height: 1.2;
+        margin: 0 0 0.6em;
+      }
+      h2 {
+        font-size: clamp(1.6rem, 4vw, 2.3rem);
+        background: linear-gradient(
+          90deg,
+          var(--gold2),
+          var(--gold),
+          var(--gold3)
+        );
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+      h3 {
+        font-size: 1.15rem;
+        color: var(--gold2);
+      }
+      p {
+        margin: 0 0 1em;
+        max-width: 75ch;
+      }
+      a {
+        color: var(--gold2);
+      }
+      .wrap {
+        max-width: 1100px;
+        margin: auto;
+        padding: 0 20px;
+      }
+      nav {
+        position: sticky;
+        top: env(safe-area-inset-top, 0px);
+        z-index: 50;
+        background: #000d;
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid var(--line);
+      }
+      nav .wrap {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        height: 56px;
+      }
+      .logo {
+        font-family: Georgia, serif;
+        font-weight: 700;
+        color: var(--gold);
+        white-space: nowrap;
+        text-decoration: none;
+      }
+      .links {
+        display: flex;
+        gap: 4px;
+        overflow-x: auto;
+        scrollbar-width: none;
+        flex: 1;
+      }
+      .links a {
+        color: var(--mut);
+        text-decoration: none;
+        font-size: 0.82rem;
+        padding: 6px 10px;
+        border-radius: 20px;
+        white-space: nowrap;
+      }
+      .links a:hover,
+      .links a.on {
+        color: #000;
+        background: var(--gold);
+      }
+      button,
+      .btn {
+        font: inherit;
+        cursor: pointer;
+      }
+      .btn {
+        background: linear-gradient(
+          135deg,
+          var(--gold2),
+          var(--gold) 55%,
+          var(--gold3)
+        );
+        color: #000;
+        border: 0;
+        border-radius: 8px;
+        padding: 8px 16px;
+        font-weight: 700;
+        white-space: nowrap;
+      }
+      :focus-visible {
+        outline: 2px solid var(--gold2);
+        outline-offset: 2px;
+      }
+      header.hero {
+        padding: 90px 0 70px;
+        text-align: center;
+        border-bottom: 1px solid var(--line);
+      }
+      .hero h1 {
+        font-size: clamp(2.4rem, 8vw, 4.8rem);
+        margin: 0;
+        background: linear-gradient(
+          90deg,
+          var(--gold3),
+          var(--gold2),
+          var(--gold),
+          var(--gold3)
+        );
+        background-size: 200% 100%;
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        animation: sh 7s linear infinite;
+      }
+      @keyframes sh {
+        to {
+          background-position: 200% 0;
+        }
+      }
+      .hero .mbg {
+        letter-spacing: 0.35em;
+        color: var(--gold);
+        margin: 16px 0 6px;
+        font-weight: 600;
+      }
+      .hero .tag {
+        color: var(--mut);
+        font-style: italic;
+      }
+      .meta {
+        display: inline-flex;
+        gap: 18px;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 24px;
+        font-size: 0.85rem;
+        color: var(--mut);
+      }
+      section {
+        padding: 60px 0;
+        border-bottom: 1px solid #1d1a12;
+      }
+      .grid {
+        display: grid;
+        gap: 16px;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      }
+      .g3 {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      @media (max-width: 860px) {
+        .g3 {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+      @media (max-width: 560px) {
+        .g3 {
+          grid-template-columns: 1fr;
+        }
+      }
+      .card {
+        background: linear-gradient(160deg, #17130a, var(--panel));
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        padding: 20px;
+      }
+      .card:hover {
+        border-color: var(--gold);
+      }
+      .card .big {
+        font-family: Georgia, serif;
+        font-size: 2rem;
+        color: var(--gold2);
+        line-height: 1.1;
+        margin: 0.2em 0;
+      }
+      .card .no {
+        color: var(--gold3);
+        font-weight: 700;
+      }
+      .badge {
+        display: inline-block;
+        font-size: 0.7rem;
+        font-weight: 700;
+        padding: 2px 9px;
+        border-radius: 12px;
+        border: 1px solid;
+        letter-spacing: 0.04em;
+      }
+      .b-pub {
+        color: var(--gold2);
+        border-color: var(--gold3);
+      }
+      .b-ver {
+        color: var(--ok);
+        border-color: var(--ok);
+      }
+      .b-fut {
+        color: #8fb5ff;
+        border-color: #8fb5ff;
+      }
+      .b-warn {
+        color: var(--warn);
+        border-color: var(--warn);
+      }
+      .note {
+        border-left: 3px solid var(--gold);
+        background: #15110a;
+        padding: 12px 16px;
+        border-radius: 0 10px 10px 0;
+        margin: 18px 0;
+        color: #ddd8c6;
+        font-size: 0.95rem;
+      }
+      .note.warn {
+        border-color: var(--warn);
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 14px 0;
+      }
+      th,
+      td {
+        text-align: left;
+        padding: 11px 14px;
+        border-bottom: 1px solid var(--line);
+      }
+      th {
+        color: var(--gold);
+        font-weight: 600;
+      }
+      .scroll {
+        overflow-x: auto;
+      }
+      .flow {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+        margin: 20px 0;
+      }
+      .flow .n {
+        width: min(100%, 430px);
+        text-align: center;
+        padding: 12px;
+        border: 1px solid var(--gold3);
+        border-radius: 10px;
+        background: #120f07;
+        font-size: 0.92rem;
+      }
+      .flow .ar {
+        color: var(--gold);
+        line-height: 1.1;
+        font-size: 1.3rem;
+        padding: 3px 0;
+      }
+      .flow .n.act {
+        box-shadow: 0 0 22px #d4af3744;
+        border-color: var(--gold);
+      }
+      .steps {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 10px;
+        position: relative;
+        counter-reset: s;
+      }
+      @media (max-width: 860px) {
+        .steps {
+          grid-template-columns: 1fr;
+        }
+      }
+      .step {
+        background: var(--panel);
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        padding: 16px;
+        cursor: pointer;
+        text-align: left;
+        color: var(--tx);
+      }
+      .step b {
+        color: var(--gold2);
+        display: block;
+        font-family: Georgia, serif;
+      }
+      .step small {
+        color: var(--gold3);
+        font-weight: 700;
+      }
+      .step.on {
+        border-color: var(--gold);
+        box-shadow: 0 0 20px #d4af3733;
+      }
+      #stepTxt {
+        min-height: 3.4em;
+      }
+      .bar {
+        display: flex;
+        height: 54px;
+        border-radius: 12px;
+        overflow: hidden;
+        border: 1px solid var(--gold3);
+        font-weight: 700;
+        margin: 16px 0;
+      }
+      .bar div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #000;
+      }
+      .bar .a {
+        width: 80%;
+        background: linear-gradient(90deg, var(--gold3), var(--gold));
+      }
+      .bar .b {
+        width: 20%;
+        background: var(--gold2);
+      }
+      .tree {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 6px;
+        margin: 18px 0;
+      }
+      .tree .row {
+        display: flex;
+        gap: 10px;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+      .dot {
+        width: 46px;
+        height: 46px;
+        border-radius: 50%;
+        border: 1px solid var(--gold);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.7rem;
+        color: var(--gold2);
+        background: #120f07;
+      }
+      .dot.top {
+        width: 70px;
+        height: 70px;
+        background: var(--gold);
+        color: #000;
+        font-weight: 700;
+      }
+      .ph {
+        border: 1px dashed var(--warn);
+        color: var(--warn);
+        padding: 2px 8px;
+        border-radius: 6px;
+        font-size: 0.85rem;
+      }
+      .road {
+        position: relative;
+        margin: 20px 0;
+        padding-left: 26px;
+        border-left: 2px solid var(--line);
+      }
+      .ph-item {
+        position: relative;
+        margin-bottom: 12px;
+      }
+      .ph-item::before {
+        content: "";
+        position: absolute;
+        left: -35px;
+        top: 18px;
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        background: #000;
+        border: 2px solid var(--gold3);
+      }
+      .ph-item.on::before {
+        background: var(--gold);
+        box-shadow: 0 0 12px var(--gold);
+      }
+      .ph-item button {
+        width: 100%;
+        text-align: left;
+        background: var(--panel);
+        border: 1px solid var(--line);
+        color: var(--tx);
+        padding: 14px 16px;
+        border-radius: 12px;
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+      }
+      .ph-item.on button {
+        border-color: var(--gold);
+      }
+      .ph-item .body {
+        display: none;
+        padding: 10px 16px;
+        color: var(--mut);
+      }
+      .ph-item.on .body {
+        display: block;
+      }
+      .acc {
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        margin-bottom: 10px;
+        background: var(--panel);
+        overflow: hidden;
+      }
+      .acc button {
+        width: 100%;
+        text-align: left;
+        background: none;
+        border: 0;
+        color: var(--tx);
+        padding: 14px 18px;
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+        font-weight: 600;
+      }
+      .acc button::after {
+        content: "+";
+        color: var(--gold);
+        font-size: 1.3rem;
+        line-height: 1;
+      }
+      .acc.open button::after {
+        content: "–";
+      }
+      .acc .ans {
+        display: none;
+        padding: 0 18px 14px;
+        color: #d6d2c3;
+      }
+      .acc.open .ans {
+        display: block;
+      }
+      .toc {
+        columns: 2 260px;
+        gap: 24px;
+        padding: 0;
+        list-style: none;
+        counter-reset: t;
+      }
+      .toc li {
+        counter-increment: t;
+        margin-bottom: 6px;
+      }
+      .toc a {
+        text-decoration: none;
+        color: var(--tx);
+      }
+      .toc a::before {
+        content: counter(t) ". ";
+        color: var(--gold3);
+      }
+      .toc a:hover {
+        color: var(--gold2);
+      }
+      .chk label {
+        display: block;
+        padding: 6px 0;
+        color: #d6d2c3;
+      }
+      .risk {
+        border: 1px solid var(--warn);
+        background: #1a1307;
+        border-radius: 14px;
+        padding: 22px;
+      }
+      .eco {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+      }
+      .eco .core {
+        background: var(--gold);
+        color: #000;
+        font-weight: 700;
+        padding: 12px 26px;
+        border-radius: 30px;
+      }
+      .eco .kids {
+        display: grid;
+        gap: 10px;
+        grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+        width: 100%;
+        border-top: 1px solid var(--gold3);
+        padding-top: 16px;
+      }
+      .kid {
+        border: 1px solid var(--line);
+        border-radius: 10px;
+        padding: 12px;
+        text-align: center;
+        background: var(--panel);
+        font-size: 0.9rem;
+      }
+      footer {
+        padding: 50px 0 70px;
+        text-align: center;
+      }
+      footer .fin {
+        font-family: Georgia, serif;
+        font-size: clamp(1rem, 3vw, 1.5rem);
+        color: var(--gold2);
+      }
+      @media (prefers-reduced-motion: reduce) {
+        * {
+          animation: none !important;
+          scroll-behavior: auto !important;
+        }
+      }
+      @media print {
+        body {
+          background: #fff;
+          color: #000;
+        }
+        nav,
+        .noprint {
+          display: none;
+        }
+        h2,
+        .hero h1 {
+          color: #8a6d1c;
+          background: none;
+        }
+        .card,
+        .acc,
+        .note,
+        .risk {
+          background: #fff;
+          border-color: #999;
+          color: #000;
+        }
+        .acc .ans,
+        .ph-item .body {
+          display: block !important;
+          color: #000;
+        }
+        section {
+          break-inside: avoid-page;
+          padding: 24px 0;
+        }
+        p,
+        td,
+        th,
+        .card .big,
+        h3,
+        .flow .n,
+        .step b {
+          color: #000;
+        }
+        body::before {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav aria-label="Primary">
+      <div class="wrap">
+        <a class="logo" href="#top">ARITOHAM</a>
+        <div class="links" id="links"></div>
+        <button class="btn noprint" onclick="window.print()">
+          Print / PDF
+        </button>
+      </div>
+    </nav>
+
+    <header class="hero" id="top">
+      <div class="wrap">
+        <span class="badge b-pub">OFFICIAL WHITE PAPER</span>
+        <h1>ARITOHAM PROTOCOL</h1>
+        <div class="mbg">MINT · BURN · GROW</div>
+        <div class="tag">Same Vision. More Possibilities.</div>
+        <p style="margin: 26px auto 0; color: var(--mut)">
+          A BNB Chain Web3 ecosystem built around minting, burning, staking,
+          smart-contract mechanisms, community participation and future digital
+          initiatives.
+        </p>
+        <div class="meta">
+          <span>Version: <b id="ver">1.0</b></span
+          ><span
+            >Published: <b id="pub">[Publication date – update here]</b></span
+          ><a href="index.html" rel="noopener">aritoham.com</a>
+        </div>
+      </div>
+    </header>
+
+    <main class="wrap">
+      <section id="toc">
+        <h2>Contents</h2>
+        <ol class="toc" id="tocList"></ol>
+        <div class="note">
+          <b>How to read this paper.</b> Every statement is tagged as
+          <span class="badge b-pub">PUBLISHED CLAIM</span> (communicated by the
+          project), <span class="badge b-ver">ON-CHAIN VERIFIED</span> (proven
+          by deployed contracts) or
+          <span class="badge b-fut">FUTURE</span> (planned or proposed). Nothing
+          here is verified unless stated, and nothing is a promise of profit.
+        </div>
+      </section>
+
+      <section id="overview">
+        <h2>1. Project Overview</h2>
+        <h3>What is Aritoham Protocol?</h3>
+        <p>
+          Aritoham Protocol is presented by its team as a BNB Chain-based Web3
+          ecosystem built around token minting, token burning, staking
+          participation, smart-contract-driven mechanisms, community
+          participation, a reward architecture and future ecosystem development.
+        </p>
+        <div class="grid">
+          <div class="card">
+            <h3>MINT</h3>
+            <p>
+              In the published model, tokens are created when users mint, within
+              a $10–$1,000 range per mint.
+            </p>
+          </div>
+          <div class="card">
+            <h3>BURN</h3>
+            <p>
+              The project states that tokens sold are burned, permanently
+              removing them from circulation.
+            </p>
+          </div>
+          <div class="card">
+            <h3>GROW</h3>
+            <p>
+              Participation in staking, the community and future ecosystem
+              projects as the project develops.
+            </p>
+          </div>
+        </div>
+        <h3 style="margin-top: 28px">Vision &amp; Mission</h3>
+        <p>
+          <b>Vision:</b> a blockchain-based ecosystem with transparent,
+          rule-based mechanisms, active community participation, long-term
+          development and later expansion into Web3 and AI-related initiatives.
+        </p>
+        <p>
+          <b>Mission:</b> to develop a connected Web3 ecosystem where users can
+          understand and take part in token mechanisms, community programs and
+          future digital services. No real-world adoption or completed
+          achievements are claimed in this paper.
+        </p>
+        <h3>Why Aritoham Protocol?</h3>
+        <div class="grid" id="why"></div>
+      </section>
+
+      <section id="architecture">
+        <h2>2. Protocol Architecture</h2>
+        <h3>BNB Chain foundation</h3>
+        <p>
+          <b>BNB Chain</b> is a public blockchain: a shared ledger kept by many
+          computers. A <b>transaction</b> is a signed instruction (for example,
+          sending tokens) recorded permanently on that ledger. A
+          <b>smart contract</b> is a program stored on the chain that runs
+          automatically when its rules are met. Because records are public,
+          anyone can inspect them with a block explorer such as BscScan. That
+          openness is why on-chain transparency matters: you can check what
+          happened rather than trust a description.
+        </p>
+        <h3>Smart-contract role (conceptual)</h3>
+        <p>
+          The model describes smart contracts as handling minting, burning,
+          staking, reward calculation, transaction processing and protocol
+          rules.
+        </p>
+        <div class="flow">
+          <div class="n">USER</div>
+          <div class="ar">↓</div>
+          <div class="n">ARITOHAM INTERFACE</div>
+          <div class="ar">↓</div>
+          <div class="n act">SMART CONTRACT</div>
+          <div class="ar">↓</div>
+          <div class="n">PROTOCOL MECHANISMS</div>
+          <div class="ar">↓</div>
+          <div class="n">ELIGIBLE TRANSACTIONS &amp; REWARDS</div>
+        </div>
+        <div class="note warn">
+          This is a conceptual diagram of the <i>published model</i>. It is not
+          proof of deployed functionality.
+        </div>
+        <div class="grid">
+          <div class="card">
+            <span class="badge b-pub">PUBLISHED DESIGN</span>
+            <p>What the project says the system does.</p>
+          </div>
+          <div class="card">
+            <span class="badge b-ver">VERIFIED DEPLOYED</span>
+            <p>What the contract code and on-chain records actually prove.</p>
+          </div>
+          <div class="card">
+            <span class="badge b-fut">FUTURE PLANNED</span>
+            <p>Features not yet released.</p>
+          </div>
+        </div>
+        <h3 style="margin-top: 28px">Transparency &amp; verification</h3>
+        <p>
+          Look up the contract on BscScan, read the verified source code, and
+          review transactions. The fields below are placeholders until the
+          project supplies official values. Nothing has been invented.
+        </p>
+        <div class="scroll">
+          <table>
+            <tr>
+              <th>Item</th>
+              <th>Value</th>
+            </tr>
+            <tr>
+              <td>Official contract address</td>
+              <td><span class="ph">[to be provided by project]</span></td>
+            </tr>
+            <tr>
+              <td>Token contract address</td>
+              <td><span class="ph">[to be provided by project]</span></td>
+            </tr>
+            <tr>
+              <td>Staking contract address (if separate)</td>
+              <td><span class="ph">[to be provided by project]</span></td>
+            </tr>
+            <tr>
+              <td>Verified source-code link</td>
+              <td><span class="ph">[to be provided by project]</span></td>
+            </tr>
+            <tr>
+              <td>Transaction explorer</td>
+              <td><span class="ph">[BscScan link to be provided]</span></td>
+            </tr>
+            <tr>
+              <td>Independent audit report</td>
+              <td><span class="ph">[if available]</span></td>
+            </tr>
+          </table>
+        </div>
+      </section>
+
+      <section id="tokenomics">
+        <h2>3. Tokenomics</h2>
+        <p><span class="badge b-pub">PUBLISHED PROJECT INFORMATION</span></p>
+        <div class="grid">
+          <div class="card">
+            <small>Token name</small>
+            <div class="big">ARITOHAM</div>
+          </div>
+          <div class="card">
+            <small>Blockchain</small>
+            <div class="big">BNB Chain</div>
+          </div>
+          <div class="card">
+            <small>Announced base price</small>
+            <div class="big">0.01 USDT</div>
+          </div>
+          <div class="card">
+            <small>Announced launch date</small>
+            <div class="big">Nov 8, 2026</div>
+          </div>
+          <div class="card">
+            <small>Minimum mint</small>
+            <div class="big">$10</div>
+          </div>
+          <div class="card">
+            <small>Maximum mint</small>
+            <div class="big">$1,000</div>
+          </div>
+        </div>
+        <div class="note warn">
+          The announced base price is not a guarantee of any future market
+          price. Total supply and maximum supply have not been published here
+          and are not assumed.
+        </div>
+        <h3>Key concepts in plain language</h3>
+        <div class="grid" id="concepts"></div>
+        <h3 style="margin-top: 28px">Published minting allocation</h3>
+        <p>
+          The published model states that each minting transaction is split:
+        </p>
+        <div
+          class="bar"
+          role="img"
+          aria-label="80 percent to staker, 20 percent to liquidity support"
+        >
+          <div class="a">80% Staker</div>
+          <div class="b">20% Liquidity</div>
+        </div>
+        <p>
+          <span class="badge b-pub">PUBLISHED MODEL</span> Treat this as a claim
+          until checked against the deployed contract.
+        </p>
+      </section>
+
+      <section id="how">
+        <h2>4. How It Works</h2>
+        <p>Select a step to read it.</p>
+        <div class="steps" id="steps"></div>
+        <div class="card" style="margin-top: 14px">
+          <p id="stepTxt" style="margin: 0"></p>
+        </div>
+        <h3 style="margin-top: 28px">Staking</h3>
+        <p>
+          Staking means placing assets into a contract to take part in a
+          protocol, in return for possible rewards. The deposit amount relates
+          to participation in the published model. Before staking, understand
+          lock periods, withdrawal rules and contract conditions.
+          <span class="ph"
+            >Lock periods and withdrawal features: requires confirmation.</span
+          >
+        </p>
+        <h3>Claiming</h3>
+        <p>
+          A claim is a request to receive rewards you are eligible for. Factors:
+          how rewards are calculated, eligibility, whether a claim is available
+          yet, on-chain transaction confirmation, and network fees (gas) paid in
+          BNB.
+          <span class="ph"
+            >Operational claim conditions: requires confirmation.</span
+          >
+        </p>
+      </section>
+
+      <section id="mintburn">
+        <h2>5. Mint &amp; Burn Economy</h2>
+        <div class="grid">
+          <div class="card">
+            <h3>Minting</h3>
+            <p>
+              Minting creates new tokens. It changes supply, so it matters who
+              is permitted to mint. Check mint permissions in the contract.
+            </p>
+          </div>
+          <div class="card">
+            <h3>Burning</h3>
+            <p>
+              Burning sends tokens to an address where they can never be used
+              again, shrinking circulating supply. It differs from selling,
+              where tokens move to a buyer. The project says 100% of tokens sold
+              are burned.
+              <span class="badge b-pub"
+                >PUBLISHED CLAIM, VERIFY IN CONTRACT</span
+              >
+            </p>
+          </div>
+        </div>
+        <div class="note warn">
+          Burning alone does not guarantee a price rise. Price depends on
+          demand, liquidity and market conditions.
+        </div>
+        <div class="flow">
+          <div class="n">MINTING</div>
+          <div class="ar">↓</div>
+          <div class="n">TOKEN ALLOCATION</div>
+          <div class="ar">↓</div>
+          <div class="n">STAKING / ECOSYSTEM PARTICIPATION</div>
+          <div class="ar">↓</div>
+          <div class="n">SELL TRANSACTION</div>
+          <div class="ar">↓</div>
+          <div class="n act">PUBLISHED BURN MECHANISM</div>
+          <div class="ar">↓</div>
+          <div class="n">POTENTIAL CHANGE IN CIRCULATING SUPPLY</div>
+        </div>
+        <p>
+          <span class="badge b-warn">CONCEPTUAL</span> This flow is not verified
+          contract execution.
+        </p>
+      </section>
+
+      <section id="community">
+        <h2>6. Community Ecosystem</h2>
+        <p>
+          Only after understanding the protocol should anyone consider the
+          community layer. Community covers participation, knowledge sharing,
+          education, network development, leadership and long-term growth.
+          Members should understand the protocol before taking part.
+        </p>
+        <div class="tree" aria-label="Illustrative community structure">
+          <div class="dot top">LEADER</div>
+          <div style="color: var(--gold)">↓</div>
+          <div class="row">
+            <div class="dot">D1</div>
+            <div class="dot">D2</div>
+            <div class="dot">D3</div>
+          </div>
+          <div style="color: var(--gold)">↓</div>
+          <div class="row">
+            <div class="dot">G2</div>
+            <div class="dot">G3</div>
+            <div class="dot">…</div>
+            <div class="dot">G20</div>
+          </div>
+          <small style="color: var(--mut)"
+            >Direct members → team generations → community network → eligible
+            reward categories</small
+          >
+        </div>
+        <div class="note warn">
+          Illustrative structure only, not a guaranteed earning pathway.
+        </div>
+        <div class="grid">
+          <div class="card">
+            <h3>Direct referral · 5%</h3>
+            <p>
+              Published: earned when a direct member stakes, with a published
+              minimum stake of $50. Payment depends on applicable rules and
+              available funding.
+            </p>
+          </div>
+          <div class="card">
+            <h3>Generation · 30%</h3>
+            <p>
+              Published: community rewards across team daily income, up to 20
+              levels deep. Per-level percentages and qualifications are not
+              published here.
+            </p>
+          </div>
+          <div class="card">
+            <h3>Rank incentive · 35%</h3>
+            <p>
+              Published: leadership reward through rank progression, described
+              as unlimited depth. That does not mean unlimited or guaranteed
+              payouts.
+            </p>
+          </div>
+          <div class="card">
+            <h3>One-time rank rewards</h3>
+            <p>
+              Published: up to $125,000 at Emperor Rank. Intermediate ranks and
+              requirements are not published here.
+            </p>
+          </div>
+          <div class="card">
+            <h3>DAO Partner · 5%</h3>
+            <p>
+              Published: weekly distribution of platform global turnover among
+              eligible partners. Qualification rules are not published here.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="income">
+        <h2>SIX WAYS TO EARN — ARITOHAM INCOME ARCHITECTURE</h2>
+        <p><span class="badge b-pub">PUBLISHED CATEGORIES</span></p>
+        <div class="grid g3" id="inc"></div>
+        <div class="note warn">
+          These percentages are separate program categories. They are not a
+          single allocation of token supply, must not be added together, and are
+          not guaranteed income. Actual payouts depend on eligibility, rules,
+          funding, contract behavior and program conditions.
+        </div>
+      </section>
+
+      <section id="security">
+        <h2>7. Security</h2>
+        <p>The project’s stated control philosophy is:</p>
+        <div class="grid">
+          <div class="card">
+            <h3>No Admin</h3>
+            <p>
+              Technically: no privileged account can change rules. Check for
+              role-based permissions in the code.
+            </p>
+          </div>
+          <div class="card">
+            <h3>No Owner</h3>
+            <p>
+              Technically: ownership renounced or never assigned. Check owner()
+              on BscScan.
+            </p>
+          </div>
+          <div class="card">
+            <h3>No Limits</h3>
+            <p>
+              Technically: no hard-coded caps on transfers. Compare with
+              published limits such as the $10–$1,000 mint range.
+            </p>
+          </div>
+          <div class="card">
+            <h3>Controlled by Smart Contract</h3>
+            <p>
+              Rules execute by code. Only verifiable by reading the deployed
+              contract.
+            </p>
+          </div>
+        </div>
+        <p style="margin-top: 14px">
+          <span class="badge b-warn">NOT INDEPENDENTLY VERIFIED</span> These are
+          project claims until the deployed contract proves them.
+        </p>
+        <h3>Verification checklist</h3>
+        <div class="card chk" id="chk"></div>
+      </section>
+
+      <section id="roadmap">
+        <h2>8. Roadmap</h2>
+        <p>
+          Select a phase. No phase is marked complete because completion has not
+          been confirmed.
+        </p>
+        <div class="road" id="road"></div>
+      </section>
+
+      <section id="future">
+        <h2>9. Future Projects</h2>
+        <p>
+          The long-term vision extends beyond staking and minting. The
+          initiatives below are separate projects with no launch dates, partners
+          or technical specifications published here.
+        </p>
+        <div class="grid">
+          <div class="card">
+            <span class="badge b-fut">PLANNED</span>
+            <h3>Aritoham AI Wallet</h3>
+            <p>
+              Proposed role: a wallet experience that could cover wallet
+              interaction, digital asset management, transaction visibility,
+              AI-assisted use and ecosystem connectivity. Not operational.
+            </p>
+          </div>
+          <div class="card">
+            <span class="badge b-fut">PLANNED</span>
+            <h3>Aritoham Circle</h3>
+            <p>
+              Proposed community initiative aimed at connection, knowledge
+              sharing, participation and engagement. Specific functions have not
+              been published.
+            </p>
+          </div>
+          <div class="card">
+            <span class="badge b-fut">PLANNED</span>
+            <h3>Pulse AI</h3>
+            <p>
+              Proposed AI-related initiative within the wider vision.
+              Applications will be described only when supported by official
+              project information.
+            </p>
+          </div>
+        </div>
+        <p style="margin-top: 14px">
+          Status labels: <span class="badge b-ver">LIVE</span>
+          <span class="badge b-pub">IN DEVELOPMENT</span>
+          <span class="badge b-fut">PLANNED</span>
+          <span class="badge b-warn">CONCEPT</span>. Statuses below should be
+          updated by the project.
+        </p>
+        <div class="eco">
+          <div class="core">ARITOHAM PROTOCOL</div>
+          <div class="kids">
+            <div class="kid">
+              Aritoham Token<br /><span class="badge b-pub">PUBLISHED</span>
+            </div>
+            <div class="kid">
+              Staking &amp; Minting<br /><span class="badge b-pub"
+                >PUBLISHED</span
+              >
+            </div>
+            <div class="kid">
+              AI Wallet<br /><span class="badge b-fut">PLANNED</span>
+            </div>
+            <div class="kid">
+              Aritoham Circle<br /><span class="badge b-fut">PLANNED</span>
+            </div>
+            <div class="kid">
+              Pulse AI<br /><span class="badge b-fut">PLANNED</span>
+            </div>
+            <div class="kid">
+              Community &amp; Partners<br /><span class="badge b-pub"
+                >PUBLISHED</span
+              >
+            </div>
+          </div>
+        </div>
+        <h3 style="margin-top: 28px">Long-term vision</h3>
+        <p>
+          A connected Web3 ecosystem combining blockchain technology, digital
+          assets, smart-contract mechanisms, community participation, AI-powered
+          tools, ecosystem services and long-term development.
+        </p>
+        <p
+          class="fin"
+          style="
+            font-family: Georgia, serif;
+            color: var(--gold2);
+            font-size: 1.25rem;
+          "
+        >
+          ONE PROTOCOL. MULTIPLE POSSIBILITIES. ONE GROWING ECOSYSTEM.
+        </p>
+      </section>
+
+      <section id="faq">
+        <h2>Frequently Asked Questions</h2>
+        <div class="noprint" style="margin-bottom: 12px">
+          <button class="btn" id="expAll">Expand / collapse all</button>
+        </div>
+        <div id="faqList"></div>
+      </section>
+
+      <section id="risk">
+        <h2>Risk Disclosure &amp; Transparency</h2>
+        <div class="risk">
+          <h3>Important risks</h3>
+          <ul>
+            <li>Cryptocurrency market volatility.</li>
+            <li>Smart-contract vulnerabilities.</li>
+            <li>
+              Liquidity risk: you may be unable to sell at a fair price, or at
+              all.
+            </li>
+            <li>Token-price uncertainty.</li>
+            <li>
+              Reward-model sustainability: rewards depend on funding and
+              participation.
+            </li>
+            <li>Network transaction fees.</li>
+            <li>Regulatory and tax considerations in your country.</li>
+            <li>
+              Referral-based reward structures carry added risk and may depend
+              on continued new participation.
+            </li>
+            <li>Development and delivery risk.</li>
+            <li>
+              Future features are uncertain and may change or never launch.
+            </li>
+          </ul>
+          <p>
+            <b>No return is guaranteed.</b> The announced base price does not
+            guarantee a market price. Published reward models are not guaranteed
+            payouts. Verified source code is not the same as an independent
+            security audit. Review the deployed contract and applicable terms.
+            Participation is voluntary and involves financial risk, including
+            total loss. This paper is not financial, legal or tax advice.
+          </p>
+        </div>
+        <h3 style="margin-top: 28px">Transparency statement</h3>
+        <div class="grid">
+          <div class="card">
+            <span class="badge b-pub">PUBLISHED PROJECT INFORMATION</span>
+            <p>
+              Everything communicated by the project: price, dates, mint limits,
+              80/20 split, burn claim, income categories, control philosophy.
+            </p>
+          </div>
+          <div class="card">
+            <span class="badge b-ver">ON-CHAIN VERIFIED INFORMATION</span>
+            <p>
+              <span class="ph">None supplied yet.</span> Items move here only
+              when supported by deployed contracts and blockchain records.
+            </p>
+          </div>
+          <div class="card">
+            <span class="badge b-fut">FUTURE DEVELOPMENT</span>
+            <p>AI Wallet, Aritoham Circle, Pulse AI and further initiatives.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="wrap">
+        <h2 style="font-size: 2rem">ARITOHAM PROTOCOL</h2>
+        <p class="fin" style="margin: 0 auto">MINT · BURN · GROW</p>
+        <p style="margin: 6px auto; color: var(--mut); font-style: italic">
+          Same Vision. More Possibilities.
+        </p>
+        <p style="margin: 14px auto">
+          Aritoham Protocol aims to build a connected Web3 ecosystem around
+          minting, burning, staking, smart-contract mechanisms, community
+          participation and future digital initiatives. The vision is wider than
+          a single token or feature.
+        </p>
+        <a
+          class="btn"
+          href="index.html"
+          rel="noopener"
+          style="text-decoration: none; display: inline-block"
+          >Official website: aritoham.com</a
+        >
+        <p style="margin: 24px auto 0; color: var(--mut); font-size: 0.8rem">
+          White paper version <span id="ver2">1.0</span> · Educational document,
+          not investment advice.
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      (function () {
+        var NAV = [
+          ["overview", "Project Overview"],
+          ["architecture", "Protocol Architecture"],
+          ["tokenomics", "Tokenomics"],
+          ["how", "How It Works"],
+          ["mintburn", "Mint & Burn"],
+          ["community", "Community Ecosystem"],
+          ["income", "Income Architecture"],
+          ["security", "Security"],
+          ["roadmap", "Roadmap"],
+          ["future", "Future Projects"],
+          ["faq", "FAQ"],
+          ["risk", "Risk Disclosure"],
+        ];
+        var $ = function (i) {
+          return document.getElementById(i);
+        };
+        function h(t) {
+          return t.replace(/&/g, "&amp;");
+        }
+        $("links").innerHTML = NAV.map(function (n) {
+          return '<a href="#' + n[0] + '">' + h(n[1]) + "</a>";
+        }).join("");
+        $("tocList").innerHTML = NAV.map(function (n) {
+          return '<li><a href="#' + n[0] + '">' + h(n[1]) + "</a></li>";
+        }).join("");
+
+        var WHY = [
+          ["Smart-contract mechanisms", "Rules intended to run by code."],
+          ["BNB Chain foundation", "A public, inspectable network."],
+          ["Mint and burn model", "Supply changes defined in the model."],
+          ["Staking participation", "Take part through the staking mechanism."],
+          [
+            "Community-driven development",
+            "Education and participation at the center.",
+          ],
+          [
+            "Published reward categories",
+            "Six categories, each with stated conditions.",
+          ],
+          [
+            "Future ecosystem expansion",
+            "AI Wallet, Circle and Pulse AI are planned.",
+          ],
+        ];
+        $("why").innerHTML = WHY.map(function (w) {
+          return (
+            '<div class="card"><h3>' +
+            w[0] +
+            '</h3><p style="margin:0">' +
+            w[1] +
+            "</p></div>"
+          );
+        }).join("");
+
+        var CON = [
+          [
+            "Token supply",
+            "All tokens that exist. No total or maximum has been published here.",
+          ],
+          ["Initial supply", "Tokens present at launch. Not stated."],
+          ["Minting", "Creating new tokens, which raises supply."],
+          ["Burning", "Permanently removing tokens, which lowers supply."],
+          ["Circulating supply", "Tokens actually available to trade or move."],
+          [
+            "Liquidity",
+            "How easily a token can be bought or sold without moving its price much.",
+          ],
+          ["Base price", "A starting reference price, here 0.01 USDT."],
+          [
+            "Market price",
+            "What buyers and sellers actually pay. It can differ from the base price.",
+          ],
+          [
+            "Demand and supply",
+            "More buyers than sellers tends to push price up, and the reverse tends to push it down. Example: if more people want to sell than buy, price pressure is downward.",
+          ],
+        ];
+        $("concepts").innerHTML = CON.map(function (c) {
+          return (
+            '<div class="card"><h3>' +
+            c[0] +
+            '</h3><p style="margin:0">' +
+            c[1] +
+            "</p></div>"
+          );
+        }).join("");
+
+        var ST = [
+          ["PLAN", "Users explore and choose an available plan."],
+          [
+            "STAKE",
+            "Users participate through the available staking mechanism.",
+          ],
+          [
+            "CLAIM",
+            "Eligible rewards may be claimed according to protocol rules and conditions.",
+          ],
+          [
+            "MINT",
+            "Per the published model, 80% of each mint is allocated to the staker and 20% to liquidity support, within $10–$1,000 per mint.",
+          ],
+          ["GROW", "Users take part in the wider ecosystem and community."],
+        ];
+        var sb = $("steps");
+        sb.innerHTML = ST.map(function (s, i) {
+          return (
+            '<button class="step' +
+            (i ? "" : " on") +
+            '" data-i="' +
+            i +
+            '"><small>STEP ' +
+            (i + 1) +
+            "</small><b>" +
+            s[0] +
+            "</b></button>"
+          );
+        }).join("");
+        function setStep(i) {
+          [].forEach.call(sb.children, function (b, j) {
+            b.classList.toggle("on", j == i);
+          });
+          $("stepTxt").textContent = ST[i][1];
+        }
+        sb.onclick = function (e) {
+          var b = e.target.closest(".step");
+          if (b) setStep(+b.dataset.i);
+        };
+        setStep(0);
+
+        var INC = [
+          [
+            "01",
+            "EMISSION REWARDS",
+            "1.25%",
+            "Daily emission rewards on full deposit capital, capped at 2X according to the published model.",
+            "◈",
+          ],
+          [
+            "02",
+            "DIRECT INCOME",
+            "5%",
+            "Earned when a direct member stakes. Published minimum: $50.",
+            "⇄",
+          ],
+          [
+            "03",
+            "GENERATION INCOME",
+            "30%",
+            "Community reward across team daily income, up to 20 levels deep.",
+            "❖",
+          ],
+          [
+            "04",
+            "RANK INCENTIVE",
+            "35%",
+            "Leadership reward through the rank system, described as unlimited depth.",
+            "▲",
+          ],
+          [
+            "05",
+            "RANK REWARD",
+            "UP TO $125,000",
+            "One-time reward at Emperor Rank according to the published model.",
+            "♛",
+          ],
+          [
+            "06",
+            "DAO PARTNER PROGRAM",
+            "5%",
+            "Weekly distribution of platform global turnover among eligible partners.",
+            "⬡",
+          ],
+        ];
+        $("inc").innerHTML = INC.map(function (c) {
+          return (
+            '<div class="card"><span class="no">' +
+            c[0] +
+            '</span> <span style="float:right;color:var(--gold);font-size:1.4rem">' +
+            c[4] +
+            '</span><h3 style="margin-top:8px">' +
+            c[1] +
+            '</h3><div class="big" style="font-size:' +
+            (c[2].length > 6 ? "1.35rem" : "2.2rem") +
+            '">' +
+            c[2] +
+            '</div><p style="margin:0;font-size:.92rem;color:var(--mut)">' +
+            c[3] +
+            "</p></div>"
+          );
+        }).join("");
+
+        var CK = [
+          "Contract address matches the official website and is copied from an official channel",
+          "Source code is verified on BscScan",
+          "Owner / admin roles: renounced or documented",
+          "Mint permissions: who can mint and is there a cap",
+          "Burn permissions and the 100% sold-token burn claim checked in code",
+          "Pause functionality present or absent",
+          "Upgradeable (proxy) or immutable",
+          "Reentrancy protection in staking and claim functions",
+          "External contract dependencies reviewed",
+          "Independent audit report read, with scope and date",
+          "Recent transactions match the published 80/20 split",
+        ];
+        $("chk").innerHTML = CK.map(function (c, i) {
+          return '<label><input type="checkbox"> ' + c + "</label>";
+        }).join("");
+
+        var RM = [
+          [
+            "PHASE 1 — FOUNDATION",
+            "Project concept. Ecosystem design. Protocol planning.",
+          ],
+          [
+            "PHASE 2 — PROTOCOL DEVELOPMENT",
+            "Smart-contract development. Token mechanism preparation. Protocol architecture.",
+          ],
+          [
+            "PHASE 3 — ECOSYSTEM PREPARATION",
+            "Website and app preparation. Staking and minting interface preparation.",
+          ],
+          [
+            "PHASE 4 — PUBLIC LAUNCH",
+            "Announced date: November 8, 2026. App and website launch, plan selection, staking and minting participation, eligible reward claims.",
+          ],
+          [
+            "PHASE 5 — COMMUNITY EXPANSION",
+            "Community education. Network development. Partner ecosystem. Continued project development.",
+          ],
+          [
+            "PHASE 6 — FUTURE ECOSYSTEM",
+            "AI Wallet. Aritoham Circle. Pulse AI. Additional future initiatives.",
+          ],
+        ];
+        $("road").innerHTML = RM.map(function (r, i) {
+          return (
+            '<div class="ph-item' +
+            (i == 3 ? " on" : "") +
+            '"><button aria-expanded="' +
+            (i == 3) +
+            '"><b>' +
+            r[0] +
+            '</b><span class="badge b-warn">NOT CONFIRMED COMPLETE</span></button><div class="body">' +
+            r[1] +
+            "</div></div>"
+          );
+        }).join("");
+        $("road").onclick = function (e) {
+          var b = e.target.closest("button");
+          if (!b) return;
+          var p = b.parentNode,
+            on = !p.classList.contains("on");
+          [].forEach.call($("road").children, function (x) {
+            x.classList.remove("on");
+            x.firstChild.setAttribute("aria-expanded", "false");
+          });
+          if (on) {
+            p.classList.add("on");
+            b.setAttribute("aria-expanded", "true");
+          }
+        };
+
+        var FQ = [
+          [
+            "What is Aritoham Protocol?",
+            "A BNB Chain-based Web3 ecosystem built around minting, burning, staking, smart-contract mechanisms and community participation, with future initiatives planned.",
+          ],
+          [
+            "Which blockchain does Aritoham use?",
+            "BNB Chain, according to the project.",
+          ],
+          [
+            "What is the ARITOHAM token?",
+            "The ecosystem’s token on BNB Chain. Total and maximum supply are not stated in this paper.",
+          ],
+          [
+            "What is the announced base price?",
+            "0.01 USDT. It is a published base price, not a guaranteed market price.",
+          ],
+          [
+            "When is the launch?",
+            "The announced launch date is November 8, 2026.",
+          ],
+          ["What is the minimum mint amount?", "$10, per the published model."],
+          [
+            "What is the maximum mint amount?",
+            "$1,000, per the published model.",
+          ],
+          [
+            "What is staking?",
+            "Locking or depositing assets in a contract to take part in a protocol, possibly earning rewards under its rules. Check lock and withdrawal conditions first.",
+          ],
+          [
+            "What is minting?",
+            "Creating new tokens. In the published model, minting also triggers the 80/20 allocation.",
+          ],
+          [
+            "What is burning?",
+            "Permanently removing tokens from circulation. The project says 100% of sold tokens are burned, which must be verified in the contract.",
+          ],
+          [
+            "How does the 80/20 allocation work?",
+            "Per the published model, 80% of each mint goes to the staker and 20% to liquidity support. Verify against the deployed contract.",
+          ],
+          [
+            "What are the six income streams?",
+            "Emission rewards (1.25%), direct income (5%), generation income (30%), rank incentive (35%), one-time rank reward (up to $125,000) and the DAO Partner Program (5%). They are separate categories, not one pool, and none is guaranteed.",
+          ],
+          [
+            "What is direct income?",
+            "A published 5% category earned when a direct member stakes, with a $50 minimum stake. Payment depends on rules and funding.",
+          ],
+          [
+            "What is generation income?",
+            "A published 30% category on team daily income, up to 20 levels deep. Level-by-level rates are not published here.",
+          ],
+          [
+            "What is the rank system?",
+            "A published 35% rank incentive plus a one-time reward of up to $125,000 at Emperor Rank. Qualification requirements are not published here.",
+          ],
+          [
+            "What is the DAO Partner Program?",
+            "A published 5% weekly distribution of platform global turnover among eligible partners. Eligibility rules are not published here.",
+          ],
+          [
+            "How does smart-contract control work?",
+            "The project states: no admin, no owner, no limits, controlled by smart contract. This means rules run by code. It is a claim until the contract proves it.",
+          ],
+          [
+            "How can users verify the contract?",
+            "Open the official contract address on BscScan, confirm the source is verified, read the owner and permission functions, and review transactions. Use the checklist in the Security section.",
+          ],
+          [
+            "What is AI Wallet?",
+            "A planned or proposed initiative for AI-assisted wallet use. It is not confirmed as released.",
+          ],
+          [
+            "What is Aritoham Circle?",
+            "A planned or proposed community initiative. Its specific functions have not been published.",
+          ],
+          [
+            "What is Pulse AI?",
+            "A planned or proposed AI-related initiative. Details will be added when officially published.",
+          ],
+          [
+            "Are returns guaranteed?",
+            "No. No return, price or payout is guaranteed.",
+          ],
+          [
+            "What are the risks of participation?",
+            "Price volatility, smart-contract bugs, liquidity risk, reward sustainability, fees, regulation and tax, referral-structure risk and uncertainty over future features. You could lose all you put in.",
+          ],
+        ];
+        var fl = $("faqList");
+        fl.innerHTML = FQ.map(function (f, i) {
+          return (
+            '<div class="acc"><button aria-expanded="false">' +
+            (i + 1) +
+            ". " +
+            f[0] +
+            '</button><div class="ans">' +
+            f[1] +
+            "</div></div>"
+          );
+        }).join("");
+        fl.onclick = function (e) {
+          var b = e.target.closest("button");
+          if (!b) return;
+          var a = b.parentNode;
+          a.classList.toggle("open");
+          b.setAttribute("aria-expanded", a.classList.contains("open"));
+        };
+        var all = false;
+        $("expAll").onclick = function () {
+          all = !all;
+          [].forEach.call(fl.children, function (a) {
+            a.classList.toggle("open", all);
+            a.firstChild.setAttribute("aria-expanded", all);
+          });
+        };
+
+        var secs = NAV.map(function (n) {
+            return $(n[0]);
+          }),
+          lk = $("links").children;
+        if ("IntersectionObserver" in window) {
+          var io = new IntersectionObserver(
+            function (es) {
+              es.forEach(function (e) {
+                if (e.isIntersecting) {
+                  var i = secs.indexOf(e.target);
+                  [].forEach.call(lk, function (a, j) {
+                    a.classList.toggle("on", i == j);
+                  });
+                }
+              });
+            },
+            { rootMargin: "-30% 0px -60% 0px" }
+          );
+          secs.forEach(function (s) {
+            io.observe(s);
+          });
+        }
+        $("pub").textContent = new Date().toLocaleDateString("en-GB", {
+          year: "numeric",
+          month: "long",
+          day: "numeric",
+        });
+      })();
+    </script>
+  </body>
+</html>
